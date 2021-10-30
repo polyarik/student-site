@@ -35,10 +35,14 @@ footer {
 }
 
 .contacts-vk {
-    
+
 }
 
-.contacts-email > span, .contacts-vk > a {
+.contacts-vk a {
+    cursor: pointer;
+}
+
+.contacts-email span, .contacts-vk a {
     color: var(--saturated);
 }
 
@@ -78,7 +82,7 @@ footer {
     
     }
     
-    .contacts-email > span, .contacts-vk > a {
+    .contacts-email span, .contacts-vk a {
         
     }
 

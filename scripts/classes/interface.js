@@ -67,10 +67,12 @@ class Interface {
             taskDate.innerText = task.date.month + "/" + task.date.day;
             taskElem.appendChild(taskDate);
 
-            let taskName = document.createElement("div");
+            let taskName = document.createElement("a");
+            taskName.href = task.link; //TEMP
             taskName.className = "task-name";
             taskName.innerText = task.name;
-            taskName.onclick = () => {
+            taskName.onclick = (event) => {
+                event.preventDefault();
                 this.openTask(task.name, task.link);
             }
             taskElem.appendChild(taskName);

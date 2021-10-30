@@ -51,6 +51,10 @@ html, body {
     height: 100%;
 }
 
+a {
+    all: unset;
+}
+
 /*------------------------------*/
 
 @media (orientation: portrait) {
