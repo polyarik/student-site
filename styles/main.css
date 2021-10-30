@@ -1,0 +1,123 @@
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.category-btns {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.category-btn {
+    width: 100%;
+    max-width: 350px;
+    margin: calc(var(--margin) * 2);
+    padding: calc(var(--margin) * 2);
+    
+    border-radius: 12px;
+
+    background-color: var(--color-main);
+    color: var(--white);
+    font-size: 24px;
+
+    text-align: center;
+    cursor: pointer;
+}
+
+.category-btn:hover {
+    background-color: var(--color-secondary);
+    color: var(--saturated);
+}
+
+.tasks {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    overflow-y: auto;
+}
+
+.task-container {
+    position: relative;
+    width: 100%;
+
+    border-top: 2px solid var(--white);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    font-size: 24px;
+}
+
+.task {
+    
+}
+
+.task-date {
+    justify-self: start;
+    padding: var(--margin);
+    font-size: 16px;
+
+    color: var(--gray);
+}
+
+.task-name {
+    width: calc(100% - var(--margin)*2);
+    padding: var(--margin);
+    border-radius: 12px 0 0 12px;
+
+    text-align: center;
+
+    background-color: var(--gray);
+    cursor: pointer;
+}
+
+.task-name:hover {
+    color: var(--saturated);
+    background-color: var(--color-main);
+}
+
+.task-name:hover ~ .task-name {
+    /*TEMP*/
+    color: var(--black);
+}
+
+/*...*/
+
+/*------------------------------*/
+
+@media (orientation: portrait) {
+    /*TODO*/
+
+    /*TEMP*/
+    .main {
+        /*max-height: calc(100% - 74px - 144px - 54px);*/
+    }
+}
+
+/*------------------------------*/
+
+@media (orientation: landscape) {
+    .main {
+        grid-area: main;
+    }
+
+    /*...*/
+
+
+    @media (max-width: 720px) {
+       
+    }
+}

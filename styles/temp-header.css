@@ -1,0 +1,46 @@
+.temp-header {
+    display: none !important;
+}
+
+/*------------------------------*/
+
+@media (orientation: portrait) {
+
+}
+
+/*------------------------------*/
+
+@media (orientation: landscape) {
+    @media (max-width: 720px) {
+        .temp-header {
+            display: unset !important;
+            position: relative;
+            grid-area: header;
+
+            padding: var(--margin);
+            background-color: var(--color-main);
+
+            z-index: 3;
+        }
+
+        .temp-header-info {
+            position: relative;
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+        }
+        
+        .temp-header-info-name {
+            text-align: center;
+            font-size: 32px;
+            color: var(--white);
+        }
+        
+        .temp-header-info-group {
+            margin-left: var(--margin);
+        
+            font-size: 24px;
+            color: var(--gray);
+        }
+    }
+}

@@ -1,0 +1,215 @@
+.header {
+    position: relative;
+    left: 0;
+    top: 0;
+
+    display: flex;
+
+    padding: var(--margin);
+    background-color: var(--color-main);
+
+    z-index: 5;
+}
+
+.header-photo {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.header-photo > img {
+    -moz-border-radius: 25%;
+    -webkit-border-radius: 25%;
+    border-radius: 25%;
+}
+
+.header-info {
+    position: relative;
+    display: flex;
+    /*flex-wrap: wrap;*/
+}
+
+.header-info-name {
+    text-align: center;
+    font-size: 32px;
+    color: var(--white);
+}
+
+.header-info-group {
+    margin-left: var(--margin);
+
+    font-size: 24px;
+    color: var(--gray);
+}
+
+.header-show-btn {
+    display: none;
+}
+
+#header-show-btn-checkbox {
+    display: none;
+}
+
+.backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background-color: black;
+    opacity: 0;
+    transition: var(--transition) opacity;
+
+    pointer-events: none;
+    z-index: 4;
+}
+
+/*------------------------------*/
+
+@media (orientation: portrait) {
+    .header {
+        width: calc(100% - var(--margin)*2);
+        height: 128px;
+
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .header-photo {
+        height: 100%;
+    }
+
+    .header-photo > img {
+        height: 100%;
+    }
+
+    .header-info {
+        max-width: 64%;
+
+        align-items: baseline;
+        justify-content: center;
+    }
+
+    @media (max-width: 600px) {
+        .header-info {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 460px) {
+        .header-info {
+            max-width: 40%;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .header-photo {
+            display: none;
+        }
+    }
+}
+
+/*------------------------------*/
+
+@media (orientation: landscape) {
+    .header {
+        position: absolute;
+        width: calc(100% - var(--margin)*2);
+        height: calc(100% - var(--margin)*2);
+        grid-area: 1 / 1 / 3 / 2;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+
+        transition: var(--transition) ease-out transform;
+    }
+
+    .header-photo {
+        width: 50%;
+    }
+
+    .header-photo > img {
+        width: 100%;
+    }
+
+    .header-info {
+        width: 0;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+
+    @media (max-width: 720px) {
+        .header {
+            transform: translateX(-100%);
+        }
+
+        .header-show-btn {
+            display: unset;
+
+            position: absolute;
+            right: 0;
+            top: calc(var(--margin) / 2);
+            transform: translateX(100%);
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 0  25% 25% 0;
+
+            font-size: 32px;
+            text-align: center;
+            line-height: 48px;
+            color: var(--gray);
+            background-color: inherit;
+        }
+
+        .header-show-btn:hover {
+            color: var(--white);
+            background-color: var(--color-secondary);
+        }
+
+        .header-show-btn > label {
+            width: 100%;
+            height: 100%;
+
+            cursor: pointer;
+        }
+
+        .header-show-btn > label::after {
+            content: '☰';
+        }
+
+        .content > input:checked ~ .header > .header-show-btn > label::after {
+            content: '✖';
+        }
+
+        .content > input:checked ~ .header > .header-show-btn {
+            background-color: var(--color-secondary);
+        }
+
+        .content > input:checked ~ .header {
+            transform: translateX(0);
+        }
+
+        .content > input:checked ~ footer {
+            transform: translateX(0);
+        }
+        
+        .content > input:checked ~ .backdrop {
+            pointer-events: all;
+            opacity: .6;
+        }
+    }
+
+    @media (max-height: 320px) {
+        .header {
+            justify-content: center;
+        }
+
+        .header-photo {
+            display: none;
+        }
+    }
+}

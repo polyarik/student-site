@@ -1,0 +1,113 @@
+.subheader {
+    position: relative;
+    grid-area: header;
+
+    padding: var(--margin);
+    background-color: var(--color-secondary);
+
+    display: flex;
+    justify-content: center;
+    
+    font-size: 32px;
+    z-index: 3;
+}
+
+.subheader-info {
+    position: relative;
+
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+
+    text-align: center;
+    color: var(--white);
+}
+
+.subheader-up-btn {
+    align-self: center;
+    position: absolute;
+    right: 0;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 25% 0 0 25%;
+
+    font-size: 32px;
+    text-align: center;
+    line-height: 48px;
+    color: var(--gray);
+    background-color: inherit;
+
+    cursor: pointer;
+}
+
+.subheader-up-btn:hover {
+    color: var(--white);
+    background-color: var(--color-main);
+}
+
+.subheader-up-btn::after {
+    content: '▲';
+}
+
+/*------------------------------*/
+
+@media (orientation: portrait) {
+    /*TODO*/
+}
+
+/*------------------------------*/
+
+@media (orientation: landscape) {
+    .subheader {
+        position: relative;
+        grid-area: header;
+
+        padding: var(--margin);
+        background-color: var(--color-secondary);
+
+        display: flex;
+        justify-content: center;
+        
+        font-size: 32px;
+        z-index: 3;
+    }
+
+    .subheader-info {
+        position: relative;
+
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+
+        text-align: center;
+        color: var(--white);
+    }
+
+    .subheader-up-btn {
+        align-self: center;
+        position: absolute;
+        right: 0;
+
+        width: 48px;
+        height: 48px;
+        border-radius: 25% 0 0 25%;
+
+        font-size: 32px;
+        text-align: center;
+        line-height: 48px;
+        color: var(--gray);
+        background-color: inherit;
+
+        cursor: pointer;
+    }
+
+    .subheader-up-btn:hover {
+        color: var(--white);
+        background-color: var(--color-main);
+    }
+
+    .subheader-up-btn::after {
+        content: '▲';
+    }
+}
