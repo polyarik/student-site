@@ -67,9 +67,10 @@
 
 .task-date {
     justify-self: start;
-    padding: var(--margin);
-    font-size: 16px;
+    width: 5em;
 
+    text-align: center;
+    font-size: 16px;
     color: var(--gray);
 }
 
