@@ -49,8 +49,8 @@ footer {
 /*------------------------------*/
 
 @media (orientation: portrait) { 
-    .footer {
-        justify-self: flex-end;
+    footer {
+        grid-area: footer;
         display: flex;
         align-items: center;
         justify-content: space-around;

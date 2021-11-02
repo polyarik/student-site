@@ -17,7 +17,7 @@
 
 .category-btn {
     width: 100%;
-    max-width: 350px;
+    max-width: min(350px, calc(100% - var(--margin) * 5));
     margin: calc(var(--margin) * 2);
     padding: calc(var(--margin) * 2);
     
@@ -91,16 +91,12 @@
     color: var(--black);
 }
 
-/*...*/
-
 /*------------------------------*/
 
 @media (orientation: portrait) {
-    /*TODO*/
-
-    /*TEMP*/
     .main {
-        /*max-height: calc(100% - 74px - 144px - 54px);*/
+        grid-area: main;
+        overflow-y: auto;
     }
 }
 
@@ -110,9 +106,6 @@
     .main {
         grid-area: main;
     }
-
-    /*...*/
-
 
     @media (max-width: 720px) {
        

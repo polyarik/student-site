@@ -53,24 +53,16 @@
 /*------------------------------*/
 
 @media (orientation: portrait) {
-    /*TODO*/
+    .subheader {
+        grid-area: subheader;
+    }
 }
 
 /*------------------------------*/
 
 @media (orientation: landscape) {
     .subheader {
-        position: relative;
-        grid-area: header;
-
-        padding: var(--margin);
-        background-color: var(--color-secondary);
-
-        display: flex;
-        justify-content: center;
         
-        font-size: 32px;
-        z-index: 3;
     }
 
     .subheader-info {

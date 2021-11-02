@@ -59,8 +59,13 @@ a {
 
 @media (orientation: portrait) {
     .content {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-rows: fit-content(100%) fit-content(100%) auto fit-content(100%);
+        grid-template-areas:
+            "header"
+            "subheader"
+            "main"
+            "footer";
     }
 }
 
